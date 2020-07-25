@@ -16,6 +16,7 @@ time, mark, audio, video {
   border: 0;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   vertical-align: baseline;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -49,4 +50,9 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./../fonts/Roboto-Regular.ttf') format('truetype');
 }
