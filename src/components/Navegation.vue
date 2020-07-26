@@ -65,7 +65,7 @@
 </template>
 
 <script>
-  import Pokehack from "./../assets/images/pokehack-logo.svg";
+  import Pokehack from "@/assets/images/pokehack-logo.svg";
 
   export default {
     name: "Navegation",
