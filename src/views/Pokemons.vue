@@ -1,18 +1,41 @@
 <template>
-  <div class="home bg-red-400">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+  <div v-if="pokemons.length > 0">
+    <PokemonList title="Pokemons" :pokemons="pokemons"/>
+  </div>
+  <div v-else>
+    <SpinnerPokeball/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+  import GetPokemons from "@/services/GetPokemons";
+  import PokemonList from "@/components/PokemonList.vue";
+  import SpinnerPokeball from "@/components/SpinnerPokeball.vue";
 
-export default {
-  name: 'Pokemons',
-  components: {
-    // HelloWorld
+  export default {
+    name: 'Pokemons',
+    data() {
+      return {
+        pokemons: [],
+      }
+    },
+    components: {
+      SpinnerPokeball,
+      PokemonList,
+    },
+    created() {
+      this.getPokemons();
+    },
+    methods: {
+      async getPokemons() {
+        try {
+          const service = await new GetPokemons(1, 6);
+          let pokemonsData = await service.getPokemons(); 
+          this.pokemons = pokemonsData;
+        } catch (error) {
+          console.error(error)
+        }
+      }
+    }
   }
-}
 </script>
