@@ -4,19 +4,44 @@ module.exports = {
     extend: {
       colors: {
         app: {
-          "black": "#231F20",
-          "gray": "#636262",
-          "white": "#FEFEFE",
-        }
+          black: "#231F20",
+          gray: "#636262",
+          white: "#FEFEFE",
+        },
+        pokemon: {
+          grass: '#6BA497',
+          normal: '#DAD7C9',
+          fire: '#FF8F7B',
+          bug: '#CCD77B',
+          water: '#84C2FF',
+          poison: '#7B30A9',
+          electric: '#FFE55B',
+          ground: '#C69C05',
+          fairy: '#EFAEFF',
+          flying: '#C2D9DE',
+          fighting: '#A99A89',
+          psychic: '#F44987',
+          ghost: '#7465CF',
+          rock: '#898F71',
+          ice: '#AACEF1',
+          dragon: '#C882F3',
+          dark: '#4F4A46',
+          steel: '#9FACA9',
+        },
       },
       height: {
-        "28": "7rem"
+        "1/2": "50%",
+        "28": "7rem",
+        "60": "15rem",
+        '120': '30rem',
+        "160": "40rem",
       },
       inset: {
         "1/2": "50%",
         "1/4": "25%",
       },
       width: {
+        "60": "15rem",
         '72': '18rem',
         '80': '20rem',
         '88': '22rem',
@@ -45,6 +70,9 @@ module.exports = {
         "462": "116rem",
         "470": "118rem",
         "478": "120rem",
+      },
+      minWidth: {
+        "40": "10rem"
       }
     },
   },
