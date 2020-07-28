@@ -9,7 +9,7 @@
       </div>
       <div class="flex justify-between flex-wrap">
         <div class="flex">
-          <Badge v-for="kind in pokemon.kinds" :key="kind" v-bind:label="kind"/>
+          <Badge v-for="kind in pokemon.kinds" :key="kind">{{kind}}</Badge>
         </div>
         <div class="flex justify-center order-1 w-full relative mt-10">
           <div class="relative">
@@ -30,7 +30,7 @@
     <div class="absolute w-full pt-8 bg-white flex flex-col items-center"
          style="top: 92%; borderTopLeftRadius: 2rem; borderTopRightRadius: 2rem;">
       <div class="flex justify-center mt-8 mb-6">
-        <Button label="Batalla"/>
+        <Button>Batalla</Button>
       </div>
     </div>
   </div>

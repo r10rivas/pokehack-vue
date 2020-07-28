@@ -5,7 +5,7 @@
         <div class="w-1/2">
           <div class="mt-4">
             <span class="text-3xl text-app-white font-bold leading-9">{{pokemon.name}}</span>
-            <Badge v-for="kind in pokemon.kinds" :key="kind" v-bind:label="kind"/>
+            <Badge v-for="kind in pokemon.kinds" :key="kind">{{kind}}</Badge>
           </div>
         </div>
         <div class="w-1/2 flex flex-col">
