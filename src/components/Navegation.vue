@@ -15,7 +15,7 @@
               Pokemons
             </li>
           </router-link>
-          <router-link to="/about" class="h-full">
+          <router-link to="/favorites" class="h-full">
             <li :class="`h-full flex items-center cursor-pointer px-8 hover:bg-gray-400  ${$route.name == 'Favorites' ? 'font-bold' : '' }`">
               Favorites
             </li>
@@ -54,7 +54,7 @@
           <router-link to="/" @click.native="handleSidebar">
             <li :class="`p-4 text-center hover:bg-gray-400 ${$route.name == 'Pokemons' ? 'font-bold' : '' }`">Pokemons</li>
           </router-link>
-          <router-link to="/about" @click.native="handleSidebar">
+          <router-link to="/favorites" @click.native="handleSidebar">
             <li :class="`p-4 text-center hover:bg-gray-400 ${$route.name == 'Favorites' ? 'font-bold' : '' }`">Favorites</li>
           </router-link>
         </ul>

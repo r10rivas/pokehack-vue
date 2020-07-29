@@ -1,7 +1,7 @@
 export default class GetPokemons {
-  constructor(initialValue, length) {
+  constructor (collection) {
     this.BASE_URL = 'https://pokeapi.co/api/v2';
-    this.collection = [...Array(length).keys()].map(i => i + initialValue);
+    this.collection = collection;
   }
 
   async getPokemons () {
