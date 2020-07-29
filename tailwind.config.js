@@ -78,10 +78,13 @@ module.exports = {
 
       },
       minWidth: {
-        "40": "10rem"
+        "28": "7rem",
+        "40": "10rem",
       }
     },
   },
-  variants: {},
+  variants: {
+    margin: ['responsive', 'last', 'first', 'hover', 'focus'],
+  },
   plugins: [],
 }

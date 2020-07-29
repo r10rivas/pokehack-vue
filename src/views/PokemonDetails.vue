@@ -27,12 +27,15 @@
 
     </div>
 
-    <div class="absolute w-full pt-8 bg-white flex flex-col items-center"
+    <div class="absolute w-full p-8 bg-white flex flex-col items-center"
          style="top: 92%; borderTopLeftRadius: 2rem; borderTopRightRadius: 2rem;">
       <div class="flex justify-center mt-8 mb-6">
         <Button>Batalla</Button>
       </div>
+
+      <Tabs :data="pokemon.details"/>
     </div>
+
   </div>
   <div v-else>
     <SpinnerPokeball/>
@@ -42,6 +45,7 @@
   import GetPokemon from "@/services/GetDetailsPokemon";
   import SpinnerPokeball from "@/components/SpinnerPokeball.vue";
   import ButtonFavorite from "@/components/ButtonFavorite.vue";
+  import Tabs from "@/components/Tabs.vue";
   import Badge from "@/components/Badge.vue";
   import Button from "@/components/Button.vue";
   import Pokehall from "@/assets/images/pokeball.svg";
@@ -60,7 +64,8 @@
       SpinnerPokeball,
       ButtonFavorite,
       Button,
-      Badge
+      Badge,
+      Tabs,
     },
     created() {
       this.getPokemon(this.id);
@@ -79,15 +84,6 @@
 
         return favorites.includes(this.$route.params.id);
       },
-      async getPokemon(id) {
-        try {
-          const service = await new GetPokemon(id);
-          let pokemonData = await service.getPokemon(); 
-          this.pokemon = pokemonData;
-        } catch (error) {
-          console.error(error)
-        }
-      },
       handleClickFavorite () {
         const { localStorage } = window;
         const favorites = JSON.parse(localStorage.getItem('favorites'));
@@ -100,7 +96,16 @@
         }
 
         this.isFavorite = !this.isFavorite;
-      }
+      },
+      async getPokemon(id) {
+        try {
+          const service = await new GetPokemon(id);
+          let pokemonData = await service.getPokemon(); 
+          this.pokemon = pokemonData;
+        } catch (error) {
+          console.error(error)
+        }
+      },
     }
   }
 </script>
