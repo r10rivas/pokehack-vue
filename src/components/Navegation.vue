@@ -11,12 +11,12 @@
       >
         <ul class="mx-4 my-2 flex items-center">
           <router-link to="/" class="h-full">
-            <li class="h-full px-8 flex items-center cursor-pointer hover:bg-gray-400">
+            <li :class="`h-full px-8 flex items-center cursor-pointer hover:bg-gray-400 ${$route.name == 'Pokemons' ? 'font-bold' : '' }`">
               Pokemons
             </li>
           </router-link>
           <router-link to="/about" class="h-full">
-            <li class="h-full flex items-center cursor-pointer px-8 hover:bg-gray-400">
+            <li :class="`h-full flex items-center cursor-pointer px-8 hover:bg-gray-400  ${$route.name == 'Favorites' ? 'font-bold' : '' }`">
               Favorites
             </li>
           </router-link>
@@ -52,10 +52,10 @@
       <nav class="py-12 p-10 flex flex-col text-app-black text-3xl">
         <ul class="cursor-pointer">
           <router-link to="/" @click.native="handleSidebar">
-            <li class="p-4 text-center hover:bg-gray-400">Pokemons</li>
+            <li :class="`p-4 text-center hover:bg-gray-400 ${$route.name == 'Pokemons' ? 'font-bold' : '' }`">Pokemons</li>
           </router-link>
           <router-link to="/about" @click.native="handleSidebar">
-            <li class="p-4 text-center hover:bg-gray-400">Favorites</li>
+            <li :class="`p-4 text-center hover:bg-gray-400 ${$route.name == 'Favorites' ? 'font-bold' : '' }`">Favorites</li>
           </router-link>
         </ul>
       </nav>
@@ -79,7 +79,7 @@
       handleSidebar () {
         this.sidebarShow = !this.sidebarShow;
       }
-    }
+    },
   }
 </script>
 

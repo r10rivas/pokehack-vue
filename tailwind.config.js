@@ -70,12 +70,21 @@ module.exports = {
         "462": "116rem",
         "470": "118rem",
         "478": "120rem",
+        "486": "122rem",
+        "494": "124rem",
+        "502": "126rem",
+        "510": "128rem",
+        "518": "130rem",
+
       },
       minWidth: {
-        "40": "10rem"
+        "28": "7rem",
+        "40": "10rem",
       }
     },
   },
-  variants: {},
+  variants: {
+    margin: ['responsive', 'last', 'first', 'hover', 'focus'],
+  },
   plugins: [],
 }
