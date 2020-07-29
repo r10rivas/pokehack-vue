@@ -6,40 +6,40 @@
     <SpinnerPokeball/>
   </div>
 </template>
-
 <script>
   import GetPokemons from "@/services/GetPokemons";
   import PokemonList from "@/components/PokemonList.vue";
   import SpinnerPokeball from "@/components/SpinnerPokeball.vue";
 
   export default {
-    name: 'Pokemons',
+    name: "Favorites",
     data() {
       return {
         pokemons: [],
       }
     },
-    components: {
-      SpinnerPokeball,
-      PokemonList,
-    },
     created() {
       this.getPokemons();
     },
+    components: {
+      PokemonList,
+      SpinnerPokeball,
+    },
     methods: {
-      async getPokemons() {
-
-        this.collection = [...Array(length).keys()].map(i => i + initialValue);
-
+      async getPokemons () {
         try {
-          const range = [...Array(6).keys()].map(i => i + 1)
-          const service = await new GetPokemons(range);
+          const { localStorage } = window;
+          let favorites = JSON.parse(localStorage.getItem('favorites'));
+          favorites = favorites.sort((a, b) => a - b);
+          favorites = favorites.map(ele => Number(ele));
+
+          const service = await new GetPokemons(favorites);
           let pokemonsData = await service.getPokemons(); 
           this.pokemons = pokemonsData;
         } catch (error) {
           console.error(error)
         }
       }
-    }
+    },
   }
 </script>
