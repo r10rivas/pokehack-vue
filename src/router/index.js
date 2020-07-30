@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Pokemons from '../views/Pokemons.vue';
 import Favorites from '../views/Favorites.vue';
 import PokemonDetails from "../views/PokemonDetails.vue";
+import PokemonBattle from "../views/PokemonBattle.vue";
+
 
 Vue.use(VueRouter)
 
@@ -16,6 +18,12 @@ Vue.use(VueRouter)
     path: '/pokemons/:id',
     name: 'pokemonDetails',
     component: PokemonDetails,
+    props: true,
+  },
+  {
+    path: '/pokemons/:id/battle',
+    name: 'Battle',
+    component: PokemonBattle,
     props: true
   },
   {
@@ -24,14 +32,6 @@ Vue.use(VueRouter)
     component: Favorites,
     props: true
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
 ]
 
 const router = new VueRouter({
