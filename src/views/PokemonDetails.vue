@@ -1,5 +1,5 @@
 <template>
-  <div v-if="pokemon" class="relative">
+  <div v-if="pokemon" class="w-full relative">
     <div :class="`pt-4 px-8 flex flex-col bg-pokemon-${pokemon.kinds.slice(-1)[0]}`">
       <div class="flex justify-between items-center mb-10">
         <span class="text-white text-4xl font-bold leading-10">

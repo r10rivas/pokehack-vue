@@ -1,5 +1,5 @@
 <template>
-  <div v-if="pokemons.length > 0">
+  <div class="flex justify-center" v-if="pokemons.length > 0">
     <PokemonList title="Pokemons" :pokemons="pokemons"/>
   </div>
   <div v-else>
