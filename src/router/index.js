@@ -3,8 +3,6 @@ import VueRouter from 'vue-router'
 import Pokemons from '../views/Pokemons.vue';
 import Favorites from '../views/Favorites.vue';
 import PokemonDetails from "../views/PokemonDetails.vue";
-import PokemonBattle from "../views/PokemonBattle.vue";
-
 
 Vue.use(VueRouter)
 
@@ -19,12 +17,6 @@ Vue.use(VueRouter)
     name: 'pokemonDetails',
     component: PokemonDetails,
     props: true,
-  },
-  {
-    path: '/pokemons/:id/battle',
-    name: 'Battle',
-    component: PokemonBattle,
-    props: true
   },
   {
     path: '/favorites/',
