@@ -1,5 +1,5 @@
 <template>
-  <div v-if="pokemons.length > 0">
+  <div class="flex justify-center" v-if="pokemons.length > 0">
     <PokemonList title="Pokemons" :pokemons="pokemons"/>
   </div>
   <div v-else>
@@ -28,11 +28,8 @@
     },
     methods: {
       async getPokemons() {
-
-        this.collection = [...Array(length).keys()].map(i => i + initialValue);
-
         try {
-          const range = [...Array(6).keys()].map(i => i + 1)
+          const range = [...Array(30).keys()].map(i => i + 1)
           const service = await new GetPokemons(range);
           let pokemonsData = await service.getPokemons(); 
           this.pokemons = pokemonsData;

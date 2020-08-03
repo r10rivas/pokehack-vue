@@ -36,7 +36,7 @@
 
     <!-- wrapper sidebar -->
     <transition name="fade">
-      <div class="absolute top-0 w-full h-screen bg-gray-400 opacity-75 z-10
+      <div class="fixed top-0 w-full h-screen bg-gray-400 opacity-75 z-10
                   sm:hidden"
           v-if="sidebarShow"
           @click.prevent.stop="handleSidebar"
@@ -45,7 +45,7 @@
     </transition>
 
     <!-- sidebar -->
-    <div class="absolute top-0 w-3/4 h-screen bg-app-white z-20
+    <div class="fixed top-0 w-3/4 h-screen bg-app-white z-20
                 sm:hidden"
          v-if="sidebarShow"
       >
