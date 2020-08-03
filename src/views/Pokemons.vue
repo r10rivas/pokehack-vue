@@ -29,7 +29,7 @@
     methods: {
       async getPokemons() {
         try {
-          const range = [...Array(6).keys()].map(i => i + 1)
+          const range = [...Array(30).keys()].map(i => i + 1)
           const service = await new GetPokemons(range);
           let pokemonsData = await service.getPokemons(); 
           this.pokemons = pokemonsData;
